@@ -9,7 +9,7 @@ We have developed a service that suggests activities based on weather forecasts.
 1. Node.js Version: Requires setting up a local server.
 
 
-This document explains the setup process for version 2, the Node.js version.
+This document explains the setup process for `version 2`, the Node.js version.
 This application uses the Tripadvisor API, which is free for up to 5000 calls. To use this API, you need to set up either **domain restrictions or IP address restrictions**.
 
 
@@ -23,8 +23,7 @@ This application uses the Tripadvisor API, which is free for up to 5000 calls. T
 
 # Application Setup Steps
 
-1. Open Terminal and navigate to the project directory using the following command:`cd /path/to/your/tripadvisor-projectv`
-1. Start the server by running the following command in Terminal:
-`node server.js`
+1. Open Terminal and navigate to the project directory using the following command:`cd /path/to/your/tripadvisor-project` (After entering `cd　`, it’s convenient to drag and drop the folder into the terminal window.)
+1. Start the server by running the following command in Terminal:`node server.js`
 1. Open your browser and go to `http://localhost:3000` to use the application.
 1. With these steps, you are ready to use the weather-based activity suggestion service locally.
