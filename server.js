@@ -6,7 +6,7 @@ const port = 3000;
 app.use(express.static('public'));
 
 app.get('/api/search', async (req, res) => {
-    const apiKey = 'xxxxxxxxxxxxxxxxxxxxxxx'; // Please enter your API key here.
+    const apiKey = 'DE95C1878588466BACE05BB222F1B143'; // Please enter your API key here.
     let latitude = req.query.lat;//get latitude from hstml
     let longitude = req.query.lon;//get latitude from html
 
