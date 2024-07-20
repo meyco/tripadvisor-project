@@ -140,6 +140,18 @@
             }
 
         
+            //Weather maps 1.0
+            //let mapUrl =`https://maps.openweathermap.org/maps/2.0/weather/1h/TA2/4/1/6?appid=17e50ebc5d5d26613cfd7ca55fdffdb3`;
+            let mapUrl =`https://tile.openweathermap.org/map/precipitation_new/4/1/6.png?appid=17e50ebc5d5d26613cfd7ca55fdffdb3`;
+            let weatherMapResponse = await fetch(mapUrl); //fetch the url
+            let weatherMapData = await weatherMapResponse.json();
+            console.log("weatherMapImage",weatherMapData);// Check get API data
+
+
+
+
+
+
 
             //weather forcast
             let url =`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=30f7177c6e3a037397bf9ae66abb0af4&units=metric`;
@@ -147,7 +159,6 @@
             let data = await weatherResponse.json();
             console.log("openWeatherMap",data);// Check get API data
             
-
 
             let list = data.list;
             let temperaturesList = [];//make Array.
@@ -159,7 +170,6 @@
             let todayRainList = [];
             let todayTimeList = [];
             let weatherIconList = [];
-            //let uvList = [];   
             //console.log("dataLists",list);// Check get API data
 
                 for (let i = 0; i < list.length; i++) {
@@ -200,9 +210,6 @@
             // console.log("rainList",rainList);// Check get API data
             // console.log("TodayRainList",todayRainList);// Check get API data
             // console.log("weatherIconList",weatherIconList);// Check get API data
-            //console.log("uvList",uvList);// Check get API data
-
-
 
 
             let showTodayWeather = document.getElementById('todayWeather');
