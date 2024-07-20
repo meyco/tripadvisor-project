@@ -5,83 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TripAdvisor API Test</title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="Style.css">     <!--link original style css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--link font awesome-->
 
 </head>
 <body>
-    <!-- userform for weather entry -->
-    <section>
-        <div class="md:flex bg-gray-100 p-4">
-        <form>
-            <input class="input" type="text" value="Berlin" id="inputCity" title="Choose your City" 
-            placeholder="hello" />
-            <input class="input" type="text" value="Germany" id="inputCountry" title="Choose your Country" />
-            <!-- <input type="text" value="5" id="inputDayNum" /> -->
-            <button  class="bg-red-500 text-white font-bold py-2 px-4 rounded" role="button" type="button" onclick="main()">Show</button>
-        </form>
-    </section>
-
-
-<!-- main container of this website -->
-            <section class="md:flex bg-g-100">
-                <div class="flex flex-col">
-                    <div id="currentWeather" title="Current Weather" class="md:flex bg-orange-100 p-4">
-                        <div class="md:flex bg-white p-4 px-6 pt-10 pb-8 m-2 shadow-xl ring-1 ring-gray-900/5 text-black w-full sm:rounded-lg">
-                            <div class="md:flex bg-g-100 p-4 ">
-                                <i class="bg-green-500 text-black p-4 m-2"></i>
-                                <h3 class="text-xl">City Name: </h3>
-                                <span id="cityName" class="text-3xl"></span>
-                            </div>
-                            <div class="md:flex bg-pink-100 p-4">
-                                <div class="flex flex-col p-4 mx-auto">  
-                                    <h3 class="text-xl">Now Weather<i class="fa-solid fa-cloud-sun"></i>:  </h3>
-                                    <div id="todayWeather" class="text-3xl"></div>
-                                    <div id="todayWeatherIcon"></div>
-                                </div>
-                            </div>
-                        
-                            <div class="md:flex bg-blue-100 p-4">
-                                <div class="p-4 mx-auto">  
-                                    <h3 class="text-xl">Now Temperature: 
-                                        <i class="fa-solid fa-thermometer-half"></i></h3>
-                                    <div id="todayTemperature" class="text-3xl"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="md:flex bg-orange-100 p-4">
-                        <div class="md:flex bg-orange-100">
-                            <div class="flex flex-col bg-white p-4 shadow-xl ring-1 ring-gray-900/5 text-black w-full sm:rounded-lg">
-                                <div title="Recommended Activities" class="flex flex-col bg-pink-100 p-4 w-full">
-                                    <h3 class="text-xl">Recommended Activities:  <i class="fa-solid fa-biking"></i>:</h3>
-                                        <h2 id="todayActivities" class="text-3xl"></h2>
-                                        <span id="imgActivities"></span>
-                                    <div id="todayActivitiesText" class="text-lg"></div>
-                                </div>
-                                <div title="Show Nearby Search Attractions" class="flex flex-col bg-pink-100 p-4 w-full">
-                                    <p><h3 class="text-xl">Nearby Attractions  <i class="fa-solid fa-biking"></i>:</h3>
-                                    <div id="result" class="flex flex-wrap"></div>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-        
-                    <section id="forecasts" title="Forecast" class="bg-white m-2 px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 text-black w-full sm:rounded-lg">
-                        <div class="flex flex-col bg-pink-100 p-4 mx-auto">
-                            <h3 class="text-xl">Today Rain Forcast (24h)</h3>
-                            <div id="TodayTemperature"></div>
-                        </div>
-                        <div class="flex flex-col bg-pink-100 p-4 mx-auto">
-                            <h3 class="text-xl">5 Days Weather Forcast<h3>
-                            <div id="fiveDaysTemperature"></div>
-                        </div>
+    <div  class="containerAll">
+        <!-- userform for weather entry -->
+    <form>
+        <input class="input" type="text" value="Berlin" id="inputCity" title="Choose your City" 
+        placeholder="inputCity" />
+        <input class="input" type="text" value="Germany" id="inputCountry" title="Choose your Country" />
+        <!-- <input type="text" value="5" id="inputDayNum" /> -->
+        <button  class="button-56" role="button" type="button" onclick="main()">Show</button>
+    </form>
+    
+        <!-- main container of this website -->
+        <main>
+            <section id="currentWeather" title="Current Weather">
+                <h2 id="cityName"><i class="fa-solid fa-city"></i> City Name</h2>
+                <p><span>Now Weather<i class="fa-solid fa-cloud-sun"></i>:  </span><p id="todayWeather"></p><span id="todayWeatherIcon"></span></p>
+                <p><span>Now Temperature:  <i class="fa-solid fa-thermometer-half"></i></span><span id="todayTemperature"></span></dipv>
+                    <section title="Recommended Activities">
+                        <p><h3>Recommended Activities:  <i class="fa-solid fa-biking"></i>:</h3>
+                            <strong><h2 id="todayActivities"></h2></strong><span id="imgActivities"></span></p>
+                        <p id="todayActivitiesText"></p>            
                     </section>
+
+                </section>
+            <section title="Show Nearby Search Attractions">
+                <p><h3>Nearby Attractions  <i class="fa-solid fa-biking"></i>:</h3>
+                <div id="result"></div>
+    
             </section>
+        </main>
+        <section id="forecasts" title="Forecast">
+             <section>
+                <h3>Today Rain Forcast (24h)</h3>
+                <div id="TodayTemperature"></div>
+            </section>
+            <section>
+                <h3>5 Days Weather Forcast<h3>
+                <div id="fiveDaysTemperature"></div>
+            </section>
+        </section>
 
     <script>
         async function main() {
@@ -134,7 +101,7 @@
                 let placeName = placeNameList[i];
                 let address = addressList[i];
                 let placeElement = document.createElement('p');
-                placeElement.innerHTML = `<div class="flex flex-col bg-white p-2 m-1 shadow-xl ring-1 ring-gray-900/5 text-black sm:rounded-lg"><h4 class="text-xl">${placeName}</h4> <p class="text-base">${address}</p></div>`;
+                placeElement.innerHTML = `<strong>${placeName}</strong>: ${address}`;
 
                 showTripAdviserPlace.appendChild(placeElement);
             }
